@@ -10,4 +10,5 @@ RUN dnf -y update && dnf -y install openssh-server passwd && dnf clean all
 COPY entrypoint.sh /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
+RUN chmod +x /entrypoint.sh
 CMD ["/usr/sbin/sshd", "-D"]
